@@ -45,6 +45,9 @@ p {
 h1 {
 	font-size: 2.25rem;
 	font-weight: 600;
+}
+
+header:has(h1) {
 	margin-block: 1rem;
 }
 

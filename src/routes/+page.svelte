@@ -2,11 +2,21 @@
 	import BlockError from '$lib/components/BlockError.svelte'
 	import Filters from '$lib/components/Filters.svelte'
 	import Task from '$lib/components/Task.svelte'
+	import { Github } from 'lucide-svelte'
 
 	let { data, form } = $props()
 </script>
 
-<h1>Manage Tasks</h1>
+<header>
+	<h1>Manage Tasks</h1>
+	<a
+		href="https://github.com/ScriptRaccoon/sveltekit-crud-operations/"
+		target="_blank"
+		aria-label="GitHub repository"
+	>
+		<Github />
+	</a>
+</header>
 
 {#if form?.error}
 	<BlockError message={form.error} />
@@ -43,6 +53,12 @@
 </section>
 
 <style>
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	section {
 		margin-bottom: 2rem;
 	}
