@@ -4,6 +4,9 @@ import crypto from 'node:crypto'
 // in memory map of tasks, replace with db table if necessary
 const tasks: Map<string, Task> = new Map()
 
+// optional sample task
+tasks.set('1', { id: '1', title: 'Write code', done: false })
+
 export async function get_tasks(filter: TaskFilter) {
 	const all_tasks = [...tasks.values()]
 	if (filter === 'done') {
